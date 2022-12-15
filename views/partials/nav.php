@@ -8,13 +8,11 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+                        <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-                        <a href="/calorie-counter.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calorie-Counter</a>
+                        <a href="/calorie-counter.php" class="<?= urlIs('/calorie-counter.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Calorie-Counter</a>
 
-                        <a href="/food-information.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Food-Information</a>
-
-
+                        <a href="/food-information.php" class="<?= urlIs('/food-information.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Food-Information</a>
                     </div>
                 </div>
             </div>
