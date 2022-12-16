@@ -10,9 +10,9 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-                        <a href="/calorie-counter.php" class="<?= urlIs('/calorie-counter.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Calorie-Counter</a>
+                        <a href="/calorie-counter" class="<?= urlIs('/calorie-counter') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Calorie-Counter</a>
 
-                        <a href="/food-information.php" class="<?= urlIs('/food-information.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Food-Information</a>
+                        <a href="/food-information" class="<?= urlIs('/food-information') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Food-Information</a>
                     </div>
                 </div>
             </div>
