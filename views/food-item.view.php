@@ -4,14 +4,10 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
+            <!-- main section -->
             <div class="h-96 rounded-lg border-4 border-dashed border-gray-200">
-                <?php foreach ($foodItems as $foodItem) : ?>
-                    <li>
-                        <a href="/food-item?id=<?= $foodItem['id'] ?>">
-                           <?= $foodItem['food_item'] ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
+                <a href="/calorie-counter" class="text-blue-900 hover:underline"><--Back</a>
+                <p><?= $foodItem['brand'] . ' ' . $foodItem['food_item'] . ' : ' . $foodItem['calories'] ?></p>
             </div>
         </div>
     </div>
