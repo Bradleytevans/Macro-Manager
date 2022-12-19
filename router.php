@@ -10,10 +10,10 @@ $routes = [
 ];
 
 function routeToController ($uri, $routes) {
-    array_key_exists($uri, $routes) ? require $routes[$uri] : abort();
+    array_key_exists($uri, $routes) ? require $routes[$uri] : abort(Response::NOT_FOUND);
 }
 
-function abort($code = 404) {
+function abort($code) {
    http_response_code();
    require "views/{$code}.php";
    die();
