@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $heading = "Food-Information";
 

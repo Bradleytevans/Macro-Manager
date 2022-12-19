@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $config = require 'config.php';
 
@@ -9,13 +9,11 @@ $currentUserId = 1;
 
 $foodItem = $db->query('select * from meals where id = :id', [
     'id' => $_GET['id']
-    ])->fetch();
+])->find();
 
-if (! $foodItem) {
-    abort(Response::NOT_FOUND);
+if (!$foodItem) {
+    abort();
 }
 
-if ($foodItem['user_id'] != $currentUserId) {
-    abort(Response::FORBIDDEN);
-}
+authorize($foodItem['user_id'] === $currentUserId);
 require "views/food-item.view.php";
