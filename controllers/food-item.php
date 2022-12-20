@@ -1,10 +1,9 @@
 <?php
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 
 $db = new Database($config['database']);
 
-$heading = "More information";
 $currentUserId = 1;
 
 $foodItem = $db->query('select * from meals where id = :id', [
@@ -17,5 +16,7 @@ if (!$foodItem) {
 
 authorize($foodItem['user_id'] === $currentUserId);
 
-
-require "views/food-item.view.php";
+view("food-item", [
+    'heading' => 'Item Information',
+    'foodItem' => $foodItem
+]);

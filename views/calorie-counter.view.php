@@ -5,7 +5,8 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
             <div>
-                <ul> <?php foreach ($foodItems as $foodItem) : ?>
+                <ul>
+                    <?php foreach ($foodItems as $foodItem) : ?>
                         <li>
                             <a href="/food-item?id=<?= $foodItem['id'] ?>">
                                 <?= htmlspecialchars($foodItem['brand']) . ' ' . htmlspecialchars($foodItem['food_item']) . ' calories: ' . htmlspecialchars($foodItem['calories']) ?>
@@ -23,21 +24,21 @@
                                         <div>
                                             <label for="brand" class="block text-sm font-medium text-gray-700">Brand</label>
                                             <div class="mt-1">
-                                                <textarea id="brand" name="brand" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="brand name" required><?= $_POST['brand'] ?? '' ?></textarea>
+                                                <textarea id="brand" name="brand" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="brand name" ><?= $_POST['brand'] ?? '' ?></textarea>
                                                 <?php if (isset($errors['brand'])) : ?>
                                                     <p class="text-red-500 text-xs mt-2"><?= $errors['brand'] ?></p>
                                                 <?php endif; ?>
                                             </div>
                                             <label for="food-item" class="block text-sm font-medium text-gray-700">Product</label>
                                             <div class="mt-1">
-                                                <textarea id="food_item" name="food_item" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="product" required></textarea>
+                                                <textarea id="food_item" name="food_item" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="product" ></textarea>
                                                 <?php if (isset($errors['food_item'])) : ?>
                                                     <p class="text-red-500 text-xs mt-2"><?= $errors['food_item'] ?></p>
                                                 <?php endif; ?>
                                             </div>
                                             <label for="calories" class="block text-sm font-medium text-gray-700">Calories</label>
                                             <div class="mt-1">
-                                                <textarea id="calories" name="calories" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="calories" required></textarea>
+                                                <textarea id="calories" name="calories" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="calories" ></textarea>
                                                 <?php if (isset($errors['calories'])) : ?>
                                                     <p class="text-red-500 text-xs mt-2"><?= $errors['calories'] ?></p>
                                                 <?php endif; ?>

@@ -1,5 +1,5 @@
 <?php
 
-$heading = "Food-Information";
-
-require "views/food-information.view.php";
+view("food-information", [
+    'heading' => 'Food Information'
+]);

@@ -3,7 +3,7 @@ return [
     'database' => [
         'host' => 'localhost',
         'port' => 3306,
-        'dbname' => 'Macro-Manager',
+        'dbname' => 'macro-manager',
         'charset'  => 'utf8mb4'
     ]
 ];
