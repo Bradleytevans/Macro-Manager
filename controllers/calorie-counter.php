@@ -1,5 +1,7 @@
 <?php
 
+require 'Validator.php';
+
 $config = require 'config.php';
 
 $db = new Database($config['database']);
@@ -12,34 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
 
-    if (strlen($_POST['brand']) === 0) {
+    if (!Validator::string($_POST['brand'], 1, 1000)) {
         $errors['brand'] = 'A brand is required';
     }
 
-    if (strlen($_POST['brand']) > 1000) {
-        $errors['brand'] = 'The brand can not be more than 1,000 characters.';
+    if (!Validator::string($_POST['food_item'], 1, 1000)) {
+        $errors['food_item'] = 'A brand is required';
     }
 
-
-    if (strlen($_POST['food_item']) === 0) {
-        $errors['food_item'] = 'A product is required';
+    if (!Validator::string($_POST['calories'], 1, 1000)) {
+        $errors['calories'] = 'A brand is required';
     }
 
-    if (strlen($_POST['food_item']) > 1000) {
-        $errors['food_item'] = 'The product can not be more than 1,000 characters.';
-    }
-
-    if (strlen($_POST['calories']) === 0) {
-        $errors['calories'] = 'Calories are required';
-    }
-
-    
-    if (! is_numeric($_POST['calories'])) {
+    if (!Validator::integer($_POST['calories'])) {
         $errors['calories'] = 'Please us numbers.';
     }
 
-
-    // // ask Jason tomorrow
     if (empty($errors)) {
 
         $db->query('INSERT INTO meals (brand, food_item, calories, user_id) VALUES
