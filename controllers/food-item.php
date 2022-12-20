@@ -16,4 +16,6 @@ if (!$foodItem) {
 }
 
 authorize($foodItem['user_id'] === $currentUserId);
+
+
 require "views/food-item.view.php";

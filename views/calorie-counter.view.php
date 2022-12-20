@@ -8,7 +8,7 @@
                 <ul> <?php foreach ($foodItems as $foodItem) : ?>
                         <li>
                             <a href="/food-item?id=<?= $foodItem['id'] ?>">
-                                <?= $foodItem['food_item'] ?>
+                                <?= htmlspecialchars($foodItem['brand']) . ' ' . htmlspecialchars($foodItem['food_item']) . ' calories: ' . htmlspecialchars($foodItem['calories']) ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -27,7 +27,7 @@
                                             </div>
                                             <label for="food-item" class="block text-sm font-medium text-gray-700">Product</label>
                                             <div class="mt-1">
-                                                <textarea id="food-item" name="food-item" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="product"></textarea>
+                                                <textarea id="food_item" name="food_item" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="product"></textarea>
                                             </div>
                                             <label for="calories" class="block text-sm font-medium text-gray-700">Calories</label>
                                             <div class="mt-1">

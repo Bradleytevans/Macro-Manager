@@ -7,7 +7,7 @@
             <!-- main section -->
             <div class="h-96 rounded-lg border-4 border-dashed border-gray-200">
                 <a href="/calorie-counter" class="text-blue-900 hover:underline"><--Back</a>
-                <p><?= $foodItem['brand'] . ' ' . $foodItem['food_item'] . ' calories: ' . $foodItem['calories'] ?></p>
+                <p><?= htmlspecialchars($foodItem['brand']) . ' ' . htmlspecialchars($foodItem['food_item']) . ' calories: ' . htmlspecialchars($foodItem['calories']) ?></p>
             </div>
         </div>
     </div>
