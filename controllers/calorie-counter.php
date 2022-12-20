@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['brand'] = 'The brand can not be more than 1,000 characters.';
     }
 
-    
+
     if (strlen($_POST['food_item']) === 0) {
         $errors['food_item'] = 'A product is required';
     }
@@ -28,23 +28,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (strlen($_POST['food_item']) > 1000) {
         $errors['food_item'] = 'The product can not be more than 1,000 characters.';
     }
-    
+
     if (strlen($_POST['calories']) === 0) {
         $errors['calories'] = 'Calories are required';
     }
 
-    // ask Jason tomorrow
-    // if (empty($_POST['calories'])) {
-    //     dd($_POST['calories']);
-    // }
+    
+    if (! is_numeric($_POST['calories'])) {
+        $errors['calories'] = 'Please us numbers.';
+    }
 
-    $db->query('INSERT INTO meals (brand, food_item, calories, user_id) VALUES
-    (:brand, :food_item, :calories, :user_id);', [
-        'brand' => $_POST['brand'],
-        'food_item' => $_POST['food_item'],
-        'calories' => $_POST['calories'],
-        'user_id' => 1
-    ]);
+
+    // // ask Jason tomorrow
+    if (empty($errors)) {
+
+        $db->query('INSERT INTO meals (brand, food_item, calories, user_id) VALUES
+            (:brand, :food_item, :calories, :user_id);', [
+            'brand' => $_POST['brand'],
+            'food_item' => $_POST['food_item'],
+            'calories' => $_POST['calories'],
+            'user_id' => 1
+        ]);
+    }
 }
 
 
